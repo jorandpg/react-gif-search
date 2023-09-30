@@ -6,6 +6,8 @@ export function AddCategory({onNewValue}) {
     const [inputValue, setInputValue] = useState('');
 
     const onInputChange = ({target}) => {
+        // Seteamos el valor del estado de inputValue, 
+        // esto se verá reflejado en el input
         setInputValue(target.value);
     }
 
@@ -17,7 +19,7 @@ export function AddCategory({onNewValue}) {
     }
 
     return (
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ onSubmit } aria-label="form">
             <input
                 type="text"
                 placeholder="Buscar Gifs"
@@ -29,5 +31,5 @@ export function AddCategory({onNewValue}) {
 }
 
 AddCategory.propTypes = {
-    onNewValue: PropTypes.any
+    onNewValue: PropTypes.func.isRequired
 }
